@@ -9,7 +9,40 @@
 <body>
     <div class="app-container">
         <h1>P&F Wordsearch</h1>
-        
+
+        <div class="controls">
+            <h2>Cipher Sequence</h2>
+            <table>
+            <tr>
+                <td>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>H-R-I-O..H</td>
+            </tr>
+            <tr>
+                <td>?-J-B-G-?</td>
+                <td>M-P-S..M</td>
+            </tr>
+            <tr>
+                <td>?-Q-D-W-?</td>
+                <td>C-U..C</td>
+            </tr>
+            <tr>
+                <td>?-Z-K-?</td>
+                <td>N-Y..N</td>
+            </tr>
+            </table>            
+        </div>        
+
+        <div class="controls">
+            <h2>Reset Controls</h2>
+            <button onclick="resetToOriginal()">
+                Reset Original
+            </button>
+            
+            <button onclick="resetToOriginal2()">
+                Reset Anagrammed
+            </button>
+        </div>
+
         <div class="controls">
             <h2>Cipher Controls (Incremental)</h2>
             <p>Shift Counter: <span id="shift-counter">0</span></p>
@@ -26,45 +59,6 @@
                 Roman Numerals (Blue)
             </button>
         </div>
-
-        <div class="controls">
-
-<h2>Cipher Sequence</h2>
-            <table>
-  <tr>
-    <td>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    <td>H-R-I-O..H</td>
-  </tr>
-  <tr>
-    <td>?-J-B-G-?</td>
-    <td>M-P-S..M</td>
-  </tr>
-  <tr>
-    <td>?-Q-D-W-?</td>
-    <td>C-U..C</td>
-  </tr>
-  <tr>
-    <td>?-Z-K-?</td>
-    <td>N-Y..N</td>
-  </tr>
-</table>            
-
-
-
-
-        </div>
-
-        <div class="controls">
-            <h2>Reset Controls</h2>
-            <button onclick="resetToOriginal()">
-                Reset Original
-            </button>
-            
-            <button onclick="resetToOriginal2()">
-                Reset Anagrammed
-            </button>
-        </div>
-
 
         <h2>Wordsearch</h2>
         <table id="data-grid">
