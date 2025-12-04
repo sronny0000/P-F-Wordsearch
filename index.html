@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&F Wordsearch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>P&F Wordsearch</h1>
+        
+        <div class="controls">
+            <h2>Cipher Controls (Incremental)</h2>
+            <p>Shift Counter: <span id="shift-counter">0</span></p>
+
+            <button onclick="applySubstitution('LEFT')">
+                Shift Left (Red)
+            </button>
+            
+            <button onclick="applySubstitution('RIGHT')">
+                Shift Right (Red)
+            </button>
+            
+            <button onclick="highlightRomanNumerals()">
+                Roman Numerals (Blue)
+            </button>
+        </div>
+
+        <div class="controls">
+
+<h2>Cipher Sequence</h2>
+            <table>
+  <tr>
+    <td>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>H-R-I-O..H</td>
+  </tr>
+  <tr>
+    <td>?-J-B-G-?</td>
+    <td>M-P-S..M</td>
+  </tr>
+  <tr>
+    <td>?-Q-D-W-?</td>
+    <td>C-U..C</td>
+  </tr>
+  <tr>
+    <td>?-Z-K-?</td>
+    <td>N-Y..N</td>
+  </tr>
+</table>            
+
+
+
+
+        </div>
+
+        <div class="controls">
+            <h2>Reset Controls</h2>
+            <button onclick="resetToOriginal()">
+                Reset Original
+            </button>
+            
+            <button onclick="resetToOriginal2()">
+                Reset Anagrammed
+            </button>
+        </div>
+
+
+        <h2>Wordsearch</h2>
+        <table id="data-grid">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th>
+                    <th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><th>1</th><td>Q</td><td>V</td><td>U</td><td>C</td><td>A</td><td>L</td><td>I</td><td>L</td><td>E</td><td>N</td><td>I</td><td>N</td><td>E</td><td>T</td><td>E</td><td>E</td><td>N</td><td>B</td><td>M</td><td>A</td></tr>
+                <tr><th>2</th><td>C</td><td>R</td><td>E</td><td>T</td><td>E</td><td>H</td><td>T</td><td>R</td><td>E</td><td>A</td><td>O</td><td>U</td><td>C</td><td>S</td><td>I</td><td>F</td><td>E</td><td>V</td><td>L</td><td>E</td></tr>
+                <tr><th>3</th><td>O</td><td>R</td><td>O</td><td>U</td><td>N</td><td>D</td><td>H</td><td>N</td><td>I</td><td>M</td><td>I</td><td>H</td><td>S</td><td>T</td><td>O</td><td>L</td><td>I</td><td>A</td><td>R</td><td>O</td></tr>
+                <tr><th>4</th><td>U</td><td>H</td><td>T</td><td>R</td><td>O</td><td>N</td><td>R</td><td>O</td><td>E</td><td>O</td><td>C</td><td>E</td><td>H</td><td>S</td><td>R</td><td>A</td><td>R</td><td>D</td><td>W</td><td>O</td></tr>
+                <tr><th>5</th><td>N</td><td>O</td><td>U</td><td>B</td><td>T</td><td>D</td><td>E</td><td>L</td><td>O</td><td>E</td><td>L</td><td>T</td><td>L</td><td>N</td><td>T</td><td>R</td><td>E</td><td>T</td><td>A</td><td>W</td></tr>
+                <tr><th>6</th><td>T</td><td>E</td><td>T</td><td>A</td><td>T</td><td>S</td><td>E</td><td>O</td><td>N</td><td>Y</td><td>N</td><td>E</td><td>O</td><td>A</td><td>O</td><td>L</td><td>I</td><td>N</td><td>E</td><td>O</td></tr>
+                <tr><th>7</th><td>P</td><td>M</td><td>U</td><td>E</td><td>H</td><td>T</td><td>T</td><td>S</td><td>E</td><td>W</td><td>O</td><td>D</td><td>A</td><td>H</td><td>R</td><td>E</td><td>E</td><td>R</td><td>E</td><td>T</td></tr>
+                <tr><th>8</th><td>E</td><td>O</td><td>N</td><td>S</td><td>K</td><td>A</td><td>E</td><td>P</td><td>T</td><td>O</td><td>O</td><td>O</td><td>I</td><td>L</td><td>P</td><td>A</td><td>S</td><td>I</td><td>E</td><td>C</td></tr>
+                <tr><th>9</th><td>L</td><td>E</td><td>S</td><td>D</td><td>B</td><td>N</td><td>O</td><td>O</td><td>R</td><td>A</td><td>O</td><td>O</td><td>E</td><td>V</td><td>L</td><td>E</td><td>W</td><td>T</td><td>S</td><td>R</td></tr>
+                <tr><th>10</th><td>E</td><td>N</td><td>T</td><td>U</td><td>F</td><td>I</td><td>V</td><td>E</td><td>T</td><td>N</td><td>T</td><td>N</td><td>C</td><td>O</td><td>I</td><td>U</td><td>J</td><td>T</td><td>S</td><td>O</td></tr>
+                <tr><th>11</th><td>V</td><td>R</td><td>N</td><td>I</td><td>E</td><td>M</td><td>A</td><td>K</td><td>L</td><td>A</td><td>W</td><td>E</td><td>S</td><td>C</td><td>O</td><td>D</td><td>T</td><td>R</td><td>I</td><td>D</td></tr>
+                <tr><th>12</th><td>E</td><td>A</td><td>D</td><td>T</td><td>T</td><td>E</td><td>Y</td><td>O</td><td>S</td><td>S</td><td>Q</td><td>U</td><td>A</td><td>R</td><td>E</td><td>E</td><td>E</td><td>R</td><td>H</td><td>T</td></tr>
+                <tr><th>13</th><td>N</td><td>M</td><td>T</td><td>O</td><td>P</td><td>L</td><td>E</td><td>C</td><td>E</td><td>O</td><td>H</td><td>E</td><td>T</td><td>Q</td><td>U</td><td>A</td><td>R</td><td>R</td><td>Y</td><td>O</td></tr>
+                <tr><th>14</th><td>N</td><td>S</td><td>I</td><td>O</td><td>S</td><td>M</td><td>I</td><td>X</td><td>Z</td><td>F</td><td>D</td><td>Q</td><td>B</td><td>C</td><td>C</td><td>A</td><td>S</td><td>L</td><td>I</td><td>Y</td></tr>
+                <tr><th>15</th><td>A</td><td>P</td><td>S</td><td>O</td><td>R</td><td>E</td><td>Z</td><td>N</td><td>G</td><td>Q</td><td>Z</td><td>P</td><td>S</td><td>A</td><td>P</td><td>P</td><td>H</td><td>I</td><td>R</td><td>E</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* Basic CSS for the web page structure */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.app-container {
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* --- MODIFIED DATA GRID STYLING FOR SIMILARITY TO OriginalData.html --- */
+#data-grid {
+    border-collapse: collapse;
+    width: 540px; /* Set fixed width to match the Excel-exported table width */
+    margin-top: 15px;
+    font-size: 0.9em;
+    table-layout: fixed;
+    /* --- NEW BACKGROUND IMAGE STYLES --- */
+    background-image: url('WSColor.jpg');
+    background-repeat: no-repeat;
+    /* The table area is 20 cols * 27px = 540px and 15 rows * 33px = 495px for the cells. */
+    background-size: 515px 507px; 
+    /* The background-position is set to align the image with the data cells (tds), 
+       offsetting by the width of the row header (th) and height of the column header (th). */
+    background-position: 25px 16px; 
+    /* ------------------------------------ */
+}
+
+#data-grid th, #data-grid td {
+    border: .5pt solid #595959; /* Matching the common dark gray border */
+    padding: 0; /* Remove padding for a tighter, spreadsheet-like fit */
+    text-align: center;
+    font-size: 10.0pt; /* Matching font size from Excel styles */
+    font-family: Arial, sans-serif; /* Matching font family */
+    vertical-align: middle; /* Matching vertical alignment */
+}
+
+/* Data cells (td) styles */
+#data-grid td {
+    width: 27px; /* Matching the Excel column width (20pt/27px) */
+    height: 33px; /* Matching the Excel row height (25.05pt/33px) */
+    color: gray; /* Text color for data cells from most Excel classes */
+    /* REMOVE default background-color so the image shows through. 
+       Substitution and Highlighting will override this when active. */
+    background-color: transparent; 
+}
+
+/* Header cells (th) styles for column labels (A, B, C...) */
+#data-grid thead th {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Row header cells (1, 2, 3...) styles */
+#data-grid tbody th {
+    width: 27px;
+    height: 33px;
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    font-size: 10.0pt;
+}
+/* ----------------------------------------------------------------- */
+
+.highlight-roman {
+    background-color: rgb(0, 0, 255) !important; /* Blue for Roman Numerals */
+}
