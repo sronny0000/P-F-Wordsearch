@@ -61,7 +61,7 @@ button:hover {
     background-image: url('WSColor.jpg');
     background-repeat: no-repeat;
     /* The table area is 20 cols * 27px = 540px and 15 rows * 33px = 495px for the cells. */
-    background-size: 540px 532px; 
+    background-size: 538px 534px; 
     /* The background-position is set to align the image with the data cells (tds), 
        offsetting by the width of the row header (th) and height of the column header (th). */
     background-position: 0px 0px; 
@@ -108,4 +108,5 @@ button:hover {
 
 .highlight-roman {
     background-color: rgb(0, 0, 255) !important; /* Blue for Roman Numerals */
+
 }
