@@ -10,7 +10,7 @@ body {
     max-width: 95%; 
     margin: auto;
     background-color: white;
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 20px; /* Reduced padding for smaller screens */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -31,7 +31,7 @@ button {
     border: none;
     border-radius: 4px;
     transition: background-color 0.2s;
-    /* Allow buttons to wrap */
+    /* Allow buttons to wrap and stack */
     display: inline-block; 
     margin-bottom: 10px;
 }
@@ -54,50 +54,42 @@ button:hover {
     border-right: 3px solid black !important;
 }
 
-/* --- MODIFIED DATA GRID STYLING FOR SIMILARITY TO OriginalData.html --- */
+/* --- MODIFIED DATA GRID STYLING --- */
 /* Add a responsive wrapper for the wide table */
 .table-responsive-wrapper {
-    overflow-x: auto; /* This is key: enables horizontal scrolling on small screens */
+    overflow-x: auto; /* KEY: Enables horizontal scrolling on small screens */
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
 #data-grid {
     border-collapse: collapse;
-    width: 540px; /* **KEEP** the fixed width for the table itself so it doesn't shrink, 
-                     but wrap it in a scrollable container. */
-    margin-top: 0; /* Adjusted margin */
+    width: 540px; /* Keep fixed width for the table itself */
+    margin-top: 0; 
     font-size: 0.9em;
     table-layout: fixed;
     /* --- NEW BACKGROUND IMAGE STYLES --- */
     background-image: url('WSColor.jpg');
     background-repeat: no-repeat;
-    /* The table area is 20 cols * 27px = 540px and 15 rows * 33px = 495px for the cells. */
     background-size: 540px 532px; 
-    /* The background-position is set to align the image with the data cells (tds), 
-       offsetting by the width of the row header (th) and height of the column header (th). */
     background-position: 0px 0px; 
     /* ------------------------------------ */
 }
 
-/* ... (rest of the table cell styles remain the same) ... */
-
 #data-grid th, #data-grid td {
-    border: .5pt solid #595959; /* Matching the common dark gray border */
-    padding: 0; /* Remove padding for a tighter, spreadsheet-like fit */
+    border: .5pt solid #595959; 
+    padding: 0; 
     text-align: center;
-    font-size: 10.0pt; /* Matching font size from Excel styles */
-    font-family: Arial, sans-serif; /* Matching font family */
-    vertical-align: middle; /* Matching vertical alignment */
+    font-size: 10.0pt; 
+    font-family: Arial, sans-serif; 
+    vertical-align: middle; 
 }
 
 /* Data cells (td) styles */
 #data-grid td {
-    width: 27px; /* Matching the Excel column width (20pt/27px) */
-    height: 33px; /* Matching the Excel row height (25.05pt/33px) */
-    color: gray; /* Text color for data cells from most Excel classes */
-    /* REMOVE default background-color so the image shows through. 
-       Substitution and Highlighting will override this when active. */
+    width: 27px; 
+    height: 33px; 
+    color: gray; 
     background-color: transparent; 
 }
 
@@ -127,11 +119,6 @@ button:hover {
 
 /* --- Mobile-Specific Styles (For small screens) --- */
 @media (max-width: 600px) {
-    /* Adjust controls for better stacking on small screens */
-    .controls h2 {
-        font-size: 1.2em;
-    }
-    
     /* Ensure the cipher key table is also manageable */
     .controls table {
         width: 100%;
