@@ -6,7 +6,7 @@ body {
 }
 
 .app-container {
-    max-width: 900px;
+    max-width: 700px;
     margin: auto;
     background-color: white;
     padding: 50px;
@@ -36,6 +36,20 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Custom border style definition */
+.thick-border-top {
+    border-top: 3px solid black !important;
+}
+.thick-border-bottom {
+    border-bottom: 3px solid black !important;
+}
+.thick-border-left {
+    border-left: 3px solid black !important;
+}
+.thick-border-right {
+    border-right: 3px solid black !important;
+}
+
 /* --- MODIFIED DATA GRID STYLING FOR SIMILARITY TO OriginalData.html --- */
 #data-grid {
     border-collapse: collapse;
@@ -47,10 +61,10 @@ button:hover {
     background-image: url('WSColor.jpg');
     background-repeat: no-repeat;
     /* The table area is 20 cols * 27px = 540px and 15 rows * 33px = 495px for the cells. */
-    background-size: 515px 507px; 
+    background-size: 538px 530px; 
     /* The background-position is set to align the image with the data cells (tds), 
        offsetting by the width of the row header (th) and height of the column header (th). */
-    background-position: 25px 16px; 
+    background-position: 0px 0px; 
     /* ------------------------------------ */
 }
 

@@ -8,33 +8,32 @@
 </head>
 <body>
     <div class="app-container">
-        <div class="controls">
         <h1>P&F Wordsearch</h1>
 
         <div class="controls">
-            <h2>Cipher Key Sequence</h2>
+            <h2>Cipher Key Sequence (Finite&Loop)</h2>
             <table>
             <tr>
                 <td>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>H-R-I-O..H</td>
+                <td>..H-R-I-O..</td>
             </tr>
             <tr>
                 <td>?-J-B-G-?</td>
-                <td>M-P-S..M</td>
+                <td>..M-P-S..</td>
             </tr>
             <tr>
                 <td>?-Q-D-W-?</td>
-                <td>C-U..C</td>
+                <td>..C-U..</td>
             </tr>
             <tr>
                 <td>?-Z-K-?</td>
-                <td>N-Y..N</td>
+                <td>..N-Y..</td>
             </tr>
             </table>            
         </div>        
 
         <div class="controls">
-            <h2>Reset Controls</h2>
+            <h2>Reset</h2>
             <button onclick="resetToOriginal()">
                 Reset Original
             </button>
@@ -71,9 +70,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><th>1</th><td>Q</td><td>V</td><td>U</td><td>C</td><td>A</td><td>L</td><td>I</td><td>L</td><td>E</td><td>N</td><td>I</td><td>N</td><td>E</td><td>T</td><td>E</td><td>E</td><td>N</td><td>B</td><td>M</td><td>A</td></tr>
+                <tr><th>1</th><td class="thick-border-top thick-border-left thick-border-bottom">Q</td><td class="thick-border-top thick-border-bottom">V</td><td class="thick-border-top thick-border-right thick-border-bottom">U</td><td>C</td><td>A</td><td>L</td><td>I</td><td>L</td><td>E</td><td>N</td><td>I</td><td>N</td><td>E</td><td>T</td><td>E</td><td>E</td><td>N</td><td class="thick-border-top thick-border-left thick-border-bottom">B</td><td class="thick-border-top thick-border-bottom">M</td><td class="thick-border-top thick-border-right thick-border-bottom">A</td></tr>
                 <tr><th>2</th><td>C</td><td>R</td><td>E</td><td>T</td><td>E</td><td>H</td><td>T</td><td>R</td><td>E</td><td>A</td><td>O</td><td>U</td><td>C</td><td>S</td><td>I</td><td>F</td><td>E</td><td>V</td><td>L</td><td>E</td></tr>
-                <tr><th>3</th><td>O</td><td>R</td><td>O</td><td>U</td><td>N</td><td>D</td><td>H</td><td>N</td><td>I</td><td>M</td><td>I</td><td>H</td><td>S</td><td>T</td><td>O</td><td>L</td><td>I</td><td>A</td><td>R</td><td>O</td></tr>
+                <tr><th>3</th><td>O</td><td>R</td><td>O</td><td>U</td><td>N</td><td>D</td><td>H</td><td>N</td><td>I</td><td>M</td><td class="thick-border-top thick-border-left thick-border-bottom">I</td><td class="thick-border-top thick-border-bottom">H</td><td class="thick-border-top thick-border-bottom">S</td><td class="thick-border-top thick-border-right thick-border-bottom">T</td><td>O</td><td>L</td><td>I</td><td>A</td><td>R</td><td>O</td></tr>
                 <tr><th>4</th><td>U</td><td>H</td><td>T</td><td>R</td><td>O</td><td>N</td><td>R</td><td>O</td><td>E</td><td>O</td><td>C</td><td>E</td><td>H</td><td>S</td><td>R</td><td>A</td><td>R</td><td>D</td><td>W</td><td>O</td></tr>
                 <tr><th>5</th><td>N</td><td>O</td><td>U</td><td>B</td><td>T</td><td>D</td><td>E</td><td>L</td><td>O</td><td>E</td><td>L</td><td>T</td><td>L</td><td>N</td><td>T</td><td>R</td><td>E</td><td>T</td><td>A</td><td>W</td></tr>
                 <tr><th>6</th><td>T</td><td>E</td><td>T</td><td>A</td><td>T</td><td>S</td><td>E</td><td>O</td><td>N</td><td>Y</td><td>N</td><td>E</td><td>O</td><td>A</td><td>O</td><td>L</td><td>I</td><td>N</td><td>E</td><td>O</td></tr>
@@ -84,8 +83,8 @@
                 <tr><th>11</th><td>V</td><td>R</td><td>N</td><td>I</td><td>E</td><td>M</td><td>A</td><td>K</td><td>L</td><td>A</td><td>W</td><td>E</td><td>S</td><td>C</td><td>O</td><td>D</td><td>T</td><td>R</td><td>I</td><td>D</td></tr>
                 <tr><th>12</th><td>E</td><td>A</td><td>D</td><td>T</td><td>T</td><td>E</td><td>Y</td><td>O</td><td>S</td><td>S</td><td>Q</td><td>U</td><td>A</td><td>R</td><td>E</td><td>E</td><td>E</td><td>R</td><td>H</td><td>T</td></tr>
                 <tr><th>13</th><td>N</td><td>M</td><td>T</td><td>O</td><td>P</td><td>L</td><td>E</td><td>C</td><td>E</td><td>O</td><td>H</td><td>E</td><td>T</td><td>Q</td><td>U</td><td>A</td><td>R</td><td>R</td><td>Y</td><td>O</td></tr>
-                <tr><th>14</th><td>N</td><td>S</td><td>I</td><td>O</td><td>S</td><td>M</td><td>I</td><td>X</td><td>Z</td><td>F</td><td>D</td><td>Q</td><td>B</td><td>C</td><td>C</td><td>A</td><td>S</td><td>L</td><td>I</td><td>Y</td></tr>
-                <tr><th>15</th><td>A</td><td>P</td><td>S</td><td>O</td><td>R</td><td>E</td><td>Z</td><td>N</td><td>G</td><td>Q</td><td>Z</td><td>P</td><td>S</td><td>A</td><td>P</td><td>P</td><td>H</td><td>I</td><td>R</td><td>E</td></tr>
+                <tr><th>14</th><td>N</td><td>S</td><td>I</td><td>O</td><td>S</td><td>M</td><td>I</td><td class="thick-border-top thick-border-left">X</td><td class="thick-border-top">Z</td><td class="thick-border-top">F</td><td class="thick-border-top">D</td><td class="thick-border-top thick-border-right">Q</td><td>B</td><td>C</td><td>C</td><td>A</td><td>S</td><td>L</td><td>I</td><td>Y</td></tr>
+                <tr><th>15</th><td class="thick-border-top thick-border-left thick-border-bottom">A</td><td class="thick-border-top thick-border-bottom">P</td><td class="thick-border-top thick-border-right thick-border-bottom">S</td><td>O</td><td>R</td><td>E</td><td>Z</td><td class="thick-border-bottom thick-border-left">N</td><td class="thick-border-bottom">G</td><td class="thick-border-bottom">Q</td><td class="thick-border-bottom">Z</td><td class="thick-border-bottom thick-border-right">P</td><td>S</td><td>A</td><td>P</td><td>P</td><td>H</td><td>I</td><td>R</td><td>E</td></tr>
             </tbody>
         </table>
     </div>
