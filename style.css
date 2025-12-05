@@ -6,10 +6,11 @@ body {
 }
 
 .app-container {
-    max-width: 700px;
+    /* Change max-width from fixed 700px to 95% for fluid design */
+    max-width: 95%; 
     margin: auto;
     background-color: white;
-    padding: 50px;
+    padding: 20px; /* Reduce padding for smaller screens */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -30,6 +31,9 @@ button {
     border: none;
     border-radius: 4px;
     transition: background-color 0.2s;
+    /* Allow buttons to wrap */
+    display: inline-block; 
+    margin-bottom: 10px;
 }
 
 button:hover {
@@ -51,10 +55,18 @@ button:hover {
 }
 
 /* --- MODIFIED DATA GRID STYLING FOR SIMILARITY TO OriginalData.html --- */
+/* Add a responsive wrapper for the wide table */
+.table-responsive-wrapper {
+    overflow-x: auto; /* This is key: enables horizontal scrolling on small screens */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 #data-grid {
     border-collapse: collapse;
-    width: 540px; /* Set fixed width to match the Excel-exported table width */
-    margin-top: 15px;
+    width: 540px; /* **KEEP** the fixed width for the table itself so it doesn't shrink, 
+                     but wrap it in a scrollable container. */
+    margin-top: 0; /* Adjusted margin */
     font-size: 0.9em;
     table-layout: fixed;
     /* --- NEW BACKGROUND IMAGE STYLES --- */
@@ -67,6 +79,8 @@ button:hover {
     background-position: 0px 0px; 
     /* ------------------------------------ */
 }
+
+/* ... (rest of the table cell styles remain the same) ... */
 
 #data-grid th, #data-grid td {
     border: .5pt solid #595959; /* Matching the common dark gray border */
@@ -108,4 +122,23 @@ button:hover {
 
 .highlight-roman {
     background-color: rgb(0, 0, 255) !important; /* Blue for Roman Numerals */
+}
+/* ----------------------------------------------------------------- */
+
+/* --- Mobile-Specific Styles (For small screens) --- */
+@media (max-width: 600px) {
+    /* Adjust controls for better stacking on small screens */
+    .controls h2 {
+        font-size: 1.2em;
+    }
+    
+    /* Ensure the cipher key table is also manageable */
+    .controls table {
+        width: 100%;
+        font-size: 0.9em;
+    }
+    .controls td {
+        display: block; /* Stack table cells vertically */
+        padding: 5px 0;
+    }
 }
