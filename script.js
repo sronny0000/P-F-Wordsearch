@@ -122,7 +122,6 @@ function applySubstitution(direction) {
                 cell.style.backgroundColor = 'rgb(255, 0, 0)'; 
             } else {
                 // Clear any previous color unless it's a Roman Numeral highlight (Blue)
-                // This ensures Blue is persistent against substitution unless overwritten by Red.
                 if (cell.style.backgroundColor !== 'rgb(0, 0, 255)') {
                    cell.style.backgroundColor = ''; 
                 }
@@ -137,6 +136,15 @@ function applySubstitution(direction) {
 // =================================================================
 // VBA Subroutine 5: RESET Data Functions (Uses internal constants)
 // =================================================================
+
+/**
+ * Hides all image overlays.
+ */
+function hideAllOverlays() {
+    document.getElementById('overlay-bitcoin').style.display = 'none';
+    document.getElementById('overlay-oasis').style.display = 'none';
+}
+
 
 // Helper function to apply a 2D array of data to the HTML grid
 function applyDataToGrid(data) {
@@ -163,6 +171,9 @@ function applyDataToGrid(data) {
     const counterElement = document.getElementById('shift-counter');
     counterElement.textContent = 0; 
     counterElement.style.color = 'black'; // Reset color
+
+    // HIDE OVERLAYS ON RESET
+    hideAllOverlays();
 
     console.log(`The grid has been reset.`); 
 }
@@ -198,24 +209,34 @@ function highlightRomanNumerals() {
         if (isRomanNumeral(cellValue)) {
             cell.style.backgroundColor = 'rgb(0, 0, 255)'; // Blue
         } else {
-            // Since the user wants to "keep old blue background", we only explicitly set 
-            // the color to blue, and we rely on the substitution function to preserve 
-            // blue highlights if the content changes (unless it's a red substitution error).
-            // To ensure the function correctly removes a blue highlight if the character
-            // is no longer a Roman numeral AND the user expects toggling/re-highlighting 
-            // to clear non-matches, we re-introduce clearing ONLY the blue color, 
-            // unless it's red (preserved substitution error).
-            
-            // However, based on the previous request's implied persistence, the simplest 
-            // way to "keep old blue background" is to only set the blue color and not clear it 
-            // for non-matches. We remove the else block entirely for persistence.
-            // If the cell is NOT a Roman numeral, we do nothing, preserving its current color
-            // (which could be red from substitution, or blue from a previous highlight).
-            
-            /* No action taken if not a Roman Numeral, thus preserving existing color. */
+            // No action taken if not a Roman Numeral, thus preserving existing color.
         }
     });
 }
 
-// Removed window.onload function as data is now stored in constant arrays
-// and no longer requires reading/storing via localStorage on initial load.
+
+// =================================================================
+// UPDATED: Image Overlay Logic
+// =================================================================
+
+/**
+ * Toggles the display of a specific image overlay without affecting others.
+ * @param {string} name - The name of the overlay to toggle ('bitcoin' or 'oasis').
+ */
+function toggleOverlay(name) {
+    let overlayElement;
+    if (name === 'bitcoin') {
+        overlayElement = document.getElementById('overlay-bitcoin');
+    } else if (name === 'oasis') {
+        overlayElement = document.getElementById('overlay-oasis');
+    }
+
+    if (overlayElement) {
+        // Toggle visibility: 'block' (visible) or 'none' (hidden)
+        if (overlayElement.style.display === 'block') {
+            overlayElement.style.display = 'none';
+        } else {
+            overlayElement.style.display = 'block';
+        }
+    }
+}

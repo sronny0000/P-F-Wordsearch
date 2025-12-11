@@ -50,40 +50,80 @@ button:hover {
     border-right: 3px solid black !important;
 }
 
-/* --- MODIFIED DATA GRID STYLING FOR SIMILARITY TO OriginalData.html --- */
+/* --- NEW STYLES FOR OVERLAYS --- */
+/* The container for the grid and overlays must be relative */
+.grid-container {
+    position: relative; 
+    /* Increased width: 567px (table size) + 2px buffer = 569px */
+    width: 600px; 
+    /* Increased height: 528px (table size) + 2px buffer = 530px */
+    height: 600px; 
+    margin-top: 15px;
+    overflow: hidden; 
+}
+
+/* Overlay common styles */
+.image-overlay {
+    position: absolute;
+    /* Offset by the width of the row header (27px) and height of the column header (33px) */
+    top: 33px; 
+    left: 27px;
+    /* Overlay size should match the cell grid area: 20 cols * 27px = 540px wide, 15 rows * 33px = 495px high */
+    width: 558px; 
+    height: 518px; 
+    
+    display: none; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* Ensure the overlay is visually on top of the grid background and cell contents */
+    z-index: 30; 
+    
+    /* Use negative margins to slightly overlap the cell borders for pixel-perfect alignment */
+    margin: -1px 0 0 -1px; 
+}
+
+/* Specific overlay image settings */
+#overlay-bitcoin {
+    background-image: url('Bitcoin.png');
+}
+
+#overlay-oasis {
+    background-image: url('Oasis.png');
+}
+/* ----------------------------------- */
+
+/* --- MODIFIED DATA GRID STYLING --- */
 #data-grid {
     border-collapse: collapse;
-    width: 540px; /* Set fixed width to match the Excel-exported table width */
-    margin-top: 15px;
+    width: 567px; /* Total width including row headers (21*27px) */
     font-size: 0.9em;
     table-layout: fixed;
-    /* --- NEW BACKGROUND IMAGE STYLES --- */
+    
     background-image: url('WSColor.jpg');
     background-repeat: no-repeat;
-    /* The table area is 20 cols * 27px = 540px and 15 rows * 33px = 495px for the cells. */
-    background-size: 538px 534px; 
-    /* The background-position is set to align the image with the data cells (tds), 
-       offsetting by the width of the row header (th) and height of the column header (th). */
-    background-position: 0px 0px; 
-    /* ------------------------------------ */
+    /* Background image covers the cell area (540x495) */
+    background-size: 558px 518px; 
+    /* Position image to align with the start of the data cells (A1) */
+    background-position: 27px 33px; 
+    
+    position: relative; 
+    z-index: 20; 
 }
 
 #data-grid th, #data-grid td {
-    border: .5pt solid #595959; /* Matching the common dark gray border */
-    padding: 0; /* Remove padding for a tighter, spreadsheet-like fit */
+    border: .5pt solid #595959; 
+    padding: 0; 
     text-align: center;
-    font-size: 10.0pt; /* Matching font size from Excel styles */
-    font-family: Arial, sans-serif; /* Matching font family */
-    vertical-align: middle; /* Matching vertical alignment */
+    font-size: 10.0pt; 
+    font-family: Arial, sans-serif; 
+    vertical-align: middle; 
 }
 
 /* Data cells (td) styles */
 #data-grid td {
-    width: 27px; /* Matching the Excel column width (20pt/27px) */
-    height: 33px; /* Matching the Excel row height (25.05pt/33px) */
-    color: gray; /* Text color for data cells from most Excel classes */
-    /* REMOVE default background-color so the image shows through. 
-       Substitution and Highlighting will override this when active. */
+    width: 27px; 
+    height: 33px; 
+    color: black; 
     background-color: transparent; 
 }
 
@@ -93,6 +133,8 @@ button:hover {
     color: black;
     font-weight: bold;
     font-size: 0.9em;
+    width: 27px; 
+    height: 33px;
 }
 
 /* Row header cells (1, 2, 3...) styles */
@@ -104,11 +146,7 @@ button:hover {
     font-weight: bold;
     font-size: 10.0pt;
 }
-/* ----------------------------------------------------------------- */
 
 .highlight-roman {
     background-color: rgb(0, 0, 255) !important; /* Blue for Roman Numerals */
-
 }
-
-
