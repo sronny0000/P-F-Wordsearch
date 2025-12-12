@@ -143,6 +143,7 @@ function applySubstitution(direction) {
 function hideAllOverlays() {
     document.getElementById('overlay-bitcoin').style.display = 'none';
     document.getElementById('overlay-oasis').style.display = 'none';
+    document.getElementById('overlay-overunder').style.display = 'none';
 }
 
 
@@ -229,6 +230,8 @@ function toggleOverlay(name) {
         overlayElement = document.getElementById('overlay-bitcoin');
     } else if (name === 'oasis') {
         overlayElement = document.getElementById('overlay-oasis');
+    } else if (name === 'overunder') {
+        overlayElement = document.getElementById('overlay-overunder');
     }
 
     if (overlayElement) {
