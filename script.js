@@ -171,7 +171,7 @@ function applyDataToGrid(data) {
     // Reset the shift counter to 0
     const counterElement = document.getElementById('shift-counter');
     counterElement.textContent = 0; 
-    counterElement.style.color = 'black'; // Reset color
+    counterElement.style.color = 'gray'; // Reset color
 
     // HIDE OVERLAYS ON RESET
     hideAllOverlays();

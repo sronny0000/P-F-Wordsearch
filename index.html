@@ -8,32 +8,10 @@
 </head>
 <body>
     <div class="app-container">
-        <h1>P&F Wordsearch v1.4</h1>
+        <h2>P&F Wordsearch v1.4</h2>
 
         <div class="controls">
-            <h2>Cipher Key Sequence (Finite&Loop)</h2>
-            <table>
-            <tr>
-                <td>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>..H-R-I-O..</td>
-            </tr>
-            <tr>
-                <td>?-J-B-G-?</td>
-                <td>..M-P-S..</td>
-            </tr>
-            <tr>
-                <td>?-Q-D-W-?</td>
-                <td>..C-U..</td>
-            </tr>
-            <tr>
-                <td>?-Z-K-?</td>
-                <td>..N-Y..</td>
-            </tr>
-            </table>            
-        </div>        
-
-        <div class="controls">
-            <h2>Reset</h2>
+            <h3>Reset</h3>
             <button onclick="resetToOriginal()">
                 Reset Original
             </button>
@@ -44,8 +22,30 @@
         </div>
 
         <div class="controls">
-            <h2>Cipher Controls (Incremental)</h2>
-            <p>Shift Counter: <span id="shift-counter">0</span></p>
+            <h3>Cipher Key Sequence (Finite/Loop)</h3>
+            <table>
+            <tr>
+                <td class=text01>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td class=text01>..H-R-I-O..</td>
+            </tr>
+            <tr>
+                <td class=text01>?-J-B-G-?</td>
+                <td class=text01>..M-P-S..</td>
+            </tr>
+            <tr>
+                <td class=text01>?-Q-D-W-?</td>
+                <td class=text01>..C-U..</td>
+            </tr>
+            <tr>
+                <td class=text01>?-Z-K-?</td>
+                <td class=text01>..N-Y..</td>
+            </tr>
+            </table>            
+
+            <h3>Sequence Shift (Incremental)</h3>
+            <table>
+            <p><td class=text01>Shift Counter: <span id="shift-counter">0</span></td></p>
+            </table>
 
             <button onclick="applySubstitution('LEFT')">
                 Shift Left (Red)
@@ -61,7 +61,7 @@
         </div>
         
         <div class="controls">
-            <h2>Image Overlays</h2>
+            <h3>Image Overlay</h3>
             <button onclick="toggleOverlay('bitcoin')">
                 Bitcoin (Orange)
             </button>
@@ -71,11 +71,11 @@
             </button>
             
             <button onclick="toggleOverlay('overunder')">
-                Over-Under (Blue)
+                Under-Over (Blue)
             </button>
         </div>
 
-        <h2>Wordsearch</h2>
+        <h3>Wordsearch</h3>
         
         <div class="grid-container">
             <table id="data-grid">

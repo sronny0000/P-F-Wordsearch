@@ -9,7 +9,7 @@ body {
     max-width: 700px;
     margin: auto;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -25,7 +25,7 @@ button {
     padding: 8px 12px;
     margin-right: 10px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #bbbbbb;
     color: white;
     border: none;
     border-radius: 4px;
@@ -33,7 +33,13 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #808080;
+}
+
+.text01 {
+    font-size: 9.0pt;
+    font-family: Arial, sans-serif;
+    color: #808080;
 }
 
 .xl01 {
@@ -125,7 +131,7 @@ button:hover {
     border: 1pt solid #999999; 
     padding: 0; 
     text-align: center;
-    font-size: 10.0pt; 
+    font-size: 10.0pt;
     font-family: Arial, sans-serif; 
     vertical-align: middle; 
 }
@@ -133,7 +139,5 @@ button:hover {
 #data-grid td {
     width: 27px; 
     height: 33px; 
-    color: black; 
+    color: #808080; 
 }
-
-
