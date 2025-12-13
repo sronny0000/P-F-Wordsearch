@@ -122,7 +122,7 @@ function applySubstitution(direction) {
                 cell.style.backgroundColor = 'rgb(255, 0, 0)'; 
             } else {
                 // Clear any previous color unless it's a Roman Numeral highlight (Blue)
-                if (cell.style.backgroundColor !== 'rgb(0, 0, 255)') {
+                if (cell.style.backgroundColor !== 'rgb(0, 100, 255)') {
                    cell.style.backgroundColor = ''; 
                 }
             }
@@ -208,7 +208,7 @@ function highlightRomanNumerals() {
         
         // Check for Roman numeral and set color to Blue.
         if (isRomanNumeral(cellValue)) {
-            cell.style.backgroundColor = 'rgb(0, 0, 255)'; // Blue
+            cell.style.backgroundColor = 'rgb(0, 100, 255)'; // Blue
         } else {
             // No action taken if not a Roman Numeral, thus preserving existing color.
         }
