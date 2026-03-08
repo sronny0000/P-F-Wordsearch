@@ -138,12 +138,18 @@ function applySubstitution(direction) {
 // =================================================================
 
 /**
- * Hides all image overlays.
+ * Hides all image overlays and resets button colors.
  */
 function hideAllOverlays() {
-    document.getElementById('overlay-bitcoin').style.display = 'none';
-    document.getElementById('overlay-oasis').style.display = 'none';
-    document.getElementById('overlay-overunder').style.display = 'none';
+    const overlays = ['bitcoin', 'oasis', 'overunder'];
+    
+    overlays.forEach(name => {
+        const overlay = document.getElementById('overlay-' + name);
+        const button = document.getElementById('btn-' + name);
+        
+        if (overlay) overlay.style.display = 'none';
+        if (button) button.style.backgroundColor = '#bbbbbb'; // Reset to gray
+    });
 }
 
 
@@ -152,6 +158,9 @@ function applyDataToGrid(data) {
     const grid = document.getElementById('data-grid');
     const cells = grid.querySelectorAll('td');
     
+    isNumberMode = false; // Reset the toggle state
+    document.getElementById('toggle-numbers-btn').style.backgroundColor = '#bbbbbb';
+
     // Flatten the 2D array into a 1D array of values
     const flatData = data.flat();
 
@@ -221,25 +230,70 @@ function highlightRomanNumerals() {
 // =================================================================
 
 /**
- * Toggles the display of a specific image overlay without affecting others.
- * @param {string} name - The name of the overlay to toggle ('bitcoin' or 'oasis').
+ * Toggles the display of a specific image overlay and updates button color.
+ * @param {string} name - The name of the overlay to toggle.
  */
 function toggleOverlay(name) {
     let overlayElement;
+    let buttonElement;
+
+    // Map names to both the overlay and the corresponding button ID
     if (name === 'bitcoin') {
         overlayElement = document.getElementById('overlay-bitcoin');
+        buttonElement = document.getElementById('btn-bitcoin');
     } else if (name === 'oasis') {
         overlayElement = document.getElementById('overlay-oasis');
+        buttonElement = document.getElementById('btn-oasis');
     } else if (name === 'overunder') {
         overlayElement = document.getElementById('overlay-overunder');
+        buttonElement = document.getElementById('btn-overunder');
     }
 
-    if (overlayElement) {
-        // Toggle visibility: 'block' (visible) or 'none' (hidden)
+    if (overlayElement && buttonElement) {
+        // Toggle visibility
         if (overlayElement.style.display === 'block') {
             overlayElement.style.display = 'none';
+            buttonElement.style.backgroundColor = '#bbbbbb'; // Reset color
         } else {
             overlayElement.style.display = 'block';
+            buttonElement.style.backgroundColor = '#888888'; // Active color
         }
     }
+}
+
+// State variable to track if we are in "Number Mode"
+let isNumberMode = false;
+
+function toggleNumberValues() {
+    const grid = document.getElementById('data-grid');
+    const cells = grid.querySelectorAll('td');
+    const btn = document.getElementById('toggle-numbers-btn');
+
+    cells.forEach(cell => {
+        let currentText = cell.textContent.trim();
+        
+        if (!isNumberMode) {
+            // CONVERT TO NUMBERS
+            // Only convert single letters A-Z
+            if (currentText.length === 1 && /[A-Z]/i.test(currentText)) {
+                // Store the original letter in a data attribute so we don't lose it
+                cell.setAttribute('data-original-char', currentText);
+                
+                // Calculate A=1, B=2...
+                let numValue = currentText.toUpperCase().charCodeAt(0) - 64;
+                cell.textContent = numValue;
+            }
+        } else {
+            // REVERT TO LETTERS
+            const originalChar = cell.getAttribute('data-original-char');
+            if (originalChar) {
+                cell.textContent = originalChar;
+                cell.removeAttribute('data-original-char');
+            }
+        }
+    });
+
+    // Toggle state and button appearance
+    isNumberMode = !isNumberMode;
+    btn.style.backgroundColor = isNumberMode ? '#888888' : '#bbbbbb';
 }

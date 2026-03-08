@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roland's P&F Wordsearch</title>
+    <title>P&F Wordsearch</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
-        <h2>Roland's P&F Wordsearch v1.4</h2>
+        <h2>Roland's P&F Wordsearch v1.6</h2>
 
         <div class="controls">
             <h3>Reset</h3>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="controls">
-            <h3>Cryptogram Key Sequence (Finite/Loop)</h3>
+            <h3>Cipher Key Sequence (Finite/Loop)</h3>
             <table>
             <tr>
                 <td class=text01>?-X-E-V-A-L-T-F-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -58,19 +58,24 @@
             <button onclick="highlightRomanNumerals()">
                 Roman Numerals (Blue)
             </button>
+
+            <button id="toggle-numbers-btn" onclick="toggleNumberValues()">
+                A1-Z26 (Toggle)
+            </button>
+
         </div>
         
         <div class="controls">
             <h3>Image Overlay (On/Off)</h3>
-            <button onclick="toggleOverlay('bitcoin')">
+            <button id="btn-bitcoin" onclick="toggleOverlay('bitcoin')">
                 Bitcoin (Orange)
             </button>
-            
-            <button onclick="toggleOverlay('oasis')">
+    
+            <button id="btn-oasis" onclick="toggleOverlay('oasis')">
                 Oasis (Green)
             </button>
-            
-            <button onclick="toggleOverlay('overunder')">
+    
+            <button id="btn-overunder" onclick="toggleOverlay('overunder')">
                 Under-Over (Blue)
             </button>
         </div>
@@ -104,14 +109,5 @@
         </div>
 
     <script src="script.js"></script>
-    
- <a href='https://www.counters-free.net/'>counters-free.net</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=6122873f428ea4285d451f3733bfd252ecc4ae7b'></script>
-<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1464809/t/4"></script>
-    
 </body>
-
 </html>
-
-
-
-
